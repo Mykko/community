@@ -33,10 +33,15 @@ public class SessionInterceptor implements HandlerInterceptor {
     @Autowired
     private AdService adService;
 
+//    @Value("${github.redirect.uri}")
+//    private String githubRedirectUri;
+//
+//    @Value("${gitee.redirect.uri}")
+//    private String giteeRedirectUri;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        //设置 context 级别的属性
+
         // 没有登录的时候也可以查看导航
         for (AdPosEnum adPos : AdPosEnum.values()) {
             request.getServletContext().setAttribute(adPos.name(), adService.list(adPos.name()));

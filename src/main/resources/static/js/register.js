@@ -33,13 +33,19 @@ function doSignUp(){
 	$("#alertbox").removeClass("show");
 	$("#alertbox").addClass("hidden");
 	var accountId = $("#accountid").val();
+	var name = $("#name").val();
 	var accountPwd = $("#accountpwd").val();
 	var repAccountPwd = $("#repaccountpwd").val();
-	var name = $("#name").val();
+	var vercode = $("#vercode").val();
 	// 输入非空检查
 	if (accountId.length == 0) {
 		$("#accountidbox").addClass("has-error");
 		$("#accountid").focus();
+		return;
+	}
+	if (name.length == 0) {
+		$("#namebox").addClass("has-error");
+		$("#name").focus();
 		return;
 	}
 	if (accountPwd.length == 0) {
@@ -52,13 +58,13 @@ function doSignUp(){
 		$("#repaccountpwd").focus();
 		return;
 	}
-	if (name.length == 0) {
-		$("#namebox").addClass("has-error");
-		$("#name").focus();
+	if (vercode.length == 0) {
+		$("#vercodebox").addClass("has-error");
+		$("#vercode").focus();
 		return;
 	}
 	// 确认密码检查
-	$("#accountid,#accountpwd,#repaccountpwd,#signupBtn,#name").attr('disabled', true);
+	$("#accountid,#name,#accountpwd,#repaccountpwd,#signupBtn,#vercode").attr('disabled', true);
 	if (accountPwd+"" != repAccountPwd+"") {
 		showAlert("提示：两次输入的新密码不一致，请检查确认");
 		$("#accountpwdbox").addClass("has-error");
@@ -103,8 +109,10 @@ function sendSignUpInfo(accountId, name, accountPwd){
 		url : "authorize/doSigUp.ajax",
 		data : {
 			accountId: accountId,
-			name : name,
-			token: accountPwd,
+			name: name,
+			accountPwd: accountPwd,
+			vercode : $("#vercode").val()
+
 			// encrypted : encrypted,
 			// vercode : $("#vercode").val()
 		},
@@ -139,8 +147,8 @@ function sendSignUpInfo(accountId, name, accountPwd){
 				showAlert("提示：注册失败，账户名中不得包含“=”或“:”，且首个字符不能为“#”。");
 				$("#accountidbox").addClass("has-error");
 				break;
-			case "illegalname":
-				showAlert("提示：注册失败，昵称的长度需为3-32个字符");
+			case "invalidname":
+				showAlert("提示：注册失败，昵称不合法。昵称的长度需为3-32个字符。");
 				$("#namebox").addClass("has-error");
 				break;
 			case "mustlogout":

@@ -50,7 +50,7 @@ function sendLoginInfo(accountId, password) {
 		data : {
 			// encrypted : encrypted,
 			accountId: accountId,
-			token: password
+			password: password
 			// vercode : $("#vercode").val()
 		},
 		success : function(result) {

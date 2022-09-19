@@ -73,19 +73,19 @@
                             <label for="accountpwd" id="repaccountpwdtitle"
                                    class="col-sm-3 control-label">确认密码：</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="repaccountpwd"
+                                <input type="password" class="form-control" id="repaccountpwd" onchange="showVerCode()"
                                        placeholder="请再次输入新账户的密码……">
                             </div>
                         </div>
                         <br />
-<!--                        <div id="vercodebox" class="form-group hidden">-->
-<!--                            <label class='col-sm-5'>-->
-<!--                                <img id='showvercode' class='vercodeimg' alt='点击获取验证码' src='' onclick='getNewVerCode()'>-->
-<!--                            </label>-->
-<!--                            <div class='col-sm-7'>-->
-<!--                                <input type='text' class='form-control' id='vercode' placeholder='请输入验证码进行验证……'>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <div id="vercodebox" class="form-group hidden">
+                            <label class='col-sm-5'>
+                                <img id='showvercode' class='vercodeimg' alt='点击获取验证码' src='' onclick='getNewVerCode()'>
+                            </label>
+                            <div class='col-sm-7'>
+                                <input type='text' class='form-control' id='vercode' placeholder='请输入验证码进行验证……'>
+                            </div>
+                        </div>
                         <div id="alertbox" role="alert" class="alert alert-danger hidden"></div>
                         <input id="signupBtn" class="form-control btn-primary"
                                type="button" value="立即注册" onclick="doSignUp()"> <br />
