@@ -1,0 +1,20 @@
+# datasource
+spring:
+    datasource:
+        url: @db.url@community?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+        username: @db.user@
+        password: @db.password@
+        driver-class-name: @db.driver@
+
+mybatis:
+    type-aliases-package: life.majiang.community.mapper
+    mapper-locations: classpath:mapper/*.xml
+    configuration:
+        map-underscore-to-camel-case: true
+
+## mybatis
+#mybatis:
+#    mapper-locations: classpath:mapper/*Mapper.xml # mapper映射文件路径
+#    type-aliases-package: com.itheima.springbootmybatis.domain
+#
+#    # config-location:  # 指定mybatis的核心配置文件
