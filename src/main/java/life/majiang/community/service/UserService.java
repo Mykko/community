@@ -99,15 +99,7 @@ public class UserService {
         String accountId = userSigUp.getAccountId();
         String name = userSigUp.getName();
         String password = userSigUp.getToken();
-
-//        if (System.currentTimeMillis() - Long.parseLong(info.getTime()) > TIME_OUT) {
-//            return "error";
-//        }
-
-//        if (ConfigureReader.instance().foundAccount(info.getAccount())) {
-//            return "accountexists";
-//        }
-
+        
         if (accountId != null && accountId.length() >= 3 && accountId.length() <= 32
                 && ios8859_1Encoder.canEncode(accountId)) {
             if (accountId.indexOf("=") < 0 && accountId.indexOf(":") < 0 && accountId.indexOf("#") != 0) {

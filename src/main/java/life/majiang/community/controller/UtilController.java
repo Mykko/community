@@ -2,6 +2,7 @@ package life.majiang.community.controller;
 
 
 import life.majiang.community.service.UtilService;
+import life.majiang.community.utils.VerificationCode;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,7 +27,13 @@ public class UtilController {
 
     @RequestMapping("/getNewVerCode.do")
     public void getVerCode(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
-        utilService.getNewVerCode(request, response, session);
-        return ;
+        VerificationCode vc = utilService.getNewVerCode(4);
+
+        session.setAttribute("VERCODE", vc.getCode());
+        response.setContentType("image/png");
+        OutputStream out = response.getOutputStream();
+        vc.saveTo(out);
+        out.flush();
+        out.close();
     }
 }

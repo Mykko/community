@@ -49,9 +49,14 @@ public class AuthorizeController {
         userSignUp.setAccountId(accountId);
         userSignUp.setName(name);
         userSignUp.setToken(password);
-        String msg = userService.doSigUp(userSignUp);
-        session.setAttribute("user", userSignUp);
-        return msg;
+        try {
+            String msg = userService.doSigUp(userSignUp);
+            session.setAttribute("user", userSignUp);
+            return msg;
+        } catch (Exception e) {
+//            throw new RuntimeException(e);
+            return e.getMessage();
+        }
     }
 
     @RequestMapping(value = "/authorize/doLogin.ajax",
@@ -65,10 +70,10 @@ public class AuthorizeController {
         try {
             userService.login(user);
             session.setAttribute("user", user);
+            return "success";
         } catch (Exception e) {
             return e.getMessage();
         }
-        return "success";
     }
 
     @GetMapping("/logout")

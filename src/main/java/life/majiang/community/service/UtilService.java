@@ -45,13 +45,9 @@ public class UtilService {
      * @param response
      * @param session
      */
-    public void getNewVerCode(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
-        VerificationCode vc = vcf.next(4);
-        session.setAttribute("VERCODE", vc.getCode());
-        response.setContentType("image/png");
-        OutputStream out = response.getOutputStream();
-        vc.saveTo(out);
-        out.flush();
-        out.close();
+    public VerificationCode getNewVerCode(int length) throws IOException {
+        VerificationCode vc = vcf.next(length);
+        return vc;
+
     }
 }

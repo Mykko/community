@@ -15,10 +15,24 @@ public class WebConfig implements WebMvcConfigurer {
     @Autowired
     private SessionInterceptor sessionInterceptor;
 
+    @Autowired
+    private AuthorizeInterceptor authorizeInterceptor;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(sessionInterceptor)
                 .addPathPatterns("/**")
                 .excludePathPatterns("/logout");
+        registry.addInterceptor(authorizeInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/")
+                .excludePathPatterns("/index")
+                .excludePathPatterns("/authorize/*")
+                .excludePathPatterns("/css/*")
+                .excludePathPatterns("/fonts/*")
+                .excludePathPatterns("/images/*")
+                .excludePathPatterns("/js/*")
+                .excludePathPatterns("/login")
+                .excludePathPatterns("/register");
     }
 }
