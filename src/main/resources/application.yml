@@ -16,4 +16,12 @@ server:
   port: 8081
 
 
+demo:
+  web:
+    upload-path: src/main/resources/static/uploaddir/
+
+file:
+  uploadPath: src/main/resources/static/uploaddir/
+  mapPath: /uploaddir/**
+
 
