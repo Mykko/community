@@ -8,9 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by codedrinker on 2019/9/6.
- */
+
 @Service
 public class AdService {
     @Autowired

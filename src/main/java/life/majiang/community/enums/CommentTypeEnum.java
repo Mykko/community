@@ -1,8 +1,6 @@
 package life.majiang.community.enums;
 
-/**
- * Created by codedrinker on 2019/5/31.
- */
+
 public enum CommentTypeEnum {
     QUESTION(1),
     COMMENT(2);

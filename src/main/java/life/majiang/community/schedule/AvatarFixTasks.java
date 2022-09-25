@@ -16,9 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by codedrinker on 2019/8/1.
- */
+
 @Component
 @Slf4j
 public class AvatarFixTasks {

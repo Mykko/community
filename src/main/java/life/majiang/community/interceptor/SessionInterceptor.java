@@ -20,9 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-/**
- * Created by codedrinker on 2019/5/16.
- */
+
 @Service
 public class SessionInterceptor implements HandlerInterceptor {
 

@@ -14,8 +14,6 @@ import java.util.Random;
  * 您需要先将本工厂实例化，之后调用next方法来获得一个随机验证码图片的封装对象。该对象包括了一个BufferedImage实例和
  * 一个代表验证码正确内容字符串。创建方法及各项参数意义请见构造器注释。
  * </p>
- * @author 青阳龙野(kohgylw)
- * @version 1.0
  */
 public class VerificationCodeFactory {
 

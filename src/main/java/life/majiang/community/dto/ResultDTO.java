@@ -4,9 +4,7 @@ import life.majiang.community.exception.CustomizeErrorCode;
 import life.majiang.community.exception.CustomizeException;
 import lombok.Data;
 
-/**
- * Created by codedrinker on 2019/5/31.
- */
+
 @Data
 public class ResultDTO<T> {
     private Integer code;

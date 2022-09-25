@@ -5,9 +5,7 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by codedrinker on 2019/5/14.
- */
+
 @Data
 public class PaginationDTO<T> {
     private List<T> data;

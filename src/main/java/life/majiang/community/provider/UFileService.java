@@ -16,9 +16,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-/**
- * Created by codedrinker on 2019/6/28.
- */
+
 @Slf4j
 @Service
 public class UFileService {

@@ -14,9 +14,6 @@ import java.nio.charset.CharsetEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-/**
- * Created by codedrinker on 2019/5/23.
- */
 @Service
 public class UserService {
 

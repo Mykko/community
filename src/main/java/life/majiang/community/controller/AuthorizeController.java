@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.UUID;
 
-/**
- * Created by codedrinker on 2019/4/24.
- */
+
 @Controller
 @Slf4j
 public class AuthorizeController {

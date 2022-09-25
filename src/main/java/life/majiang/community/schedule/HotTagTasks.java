@@ -13,9 +13,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-/**
- * Created by codedrinker on 2019/8/1.
- */
+
 @Component
 @Slf4j
 public class HotTagTasks {
